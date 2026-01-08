@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@plugin "daisyui";
+@import 'animate.css';
+
+
+@theme{
+    
+    --color-main: #3c3c3c;
+    --color-yellow: #f7bb17;
+}
