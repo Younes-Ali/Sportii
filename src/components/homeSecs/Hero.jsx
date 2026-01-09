@@ -9,7 +9,7 @@ export default function Hero() {
         });
     }, []);
     return (
-        <div className={ `w-full h-screen bg-cover bg-center text-white bg-amber-600`} style={{ backgroundImage: `url(${heroImg})` }}>
+        <div className={ `w-full h-screen bg-cover bg-center text-white bg-black mb-20`} style={{ backgroundImage: `url(${heroImg})` }}>
             <div className="w-full h-full bg-black/80 hover:bg-black/50 ">
                 <div className="w-full md:w-[60%] flex flex-col gap-20 p-[100px] h-full justify-center items-center md:justify-start md:items-start">
                     <h1 

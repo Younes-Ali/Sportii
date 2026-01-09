@@ -3,6 +3,7 @@ import MainLayout from "./layouts/MainLayout";
 import HomePage from "./pages/HomePage";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import SignIn from "./pages/AuthPages";
 
 export default function App() {
   return (
@@ -14,8 +15,8 @@ export default function App() {
           <Route path="dashboard" element={<p>dash</p>} />
           <Route path="contact" element={<Contact/>} />
         </Route>
-        {/* <Route path="signin" element={<SignInPage/>} />
-        <Route path="*" element={<NotFoundPage/>} /> */}
+        <Route path="signin" element={<SignIn/>} />
+        <Route path="*" element={<p>404 not found</p>} />
       </Routes>
     </BrowserRouter>
   )
