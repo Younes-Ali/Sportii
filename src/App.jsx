@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import SignIn from "./pages/AuthPages";
+import FitnessDashboard from "./pages/Dashboard";
 
 export default function App() {
   return (
@@ -12,7 +13,7 @@ export default function App() {
         <Route path="/" element={<MainLayout/>}>
           <Route index element={<HomePage/>} />
           <Route path="about" element={<About/>} />
-          <Route path="dashboard" element={<p>dash</p>} />
+          <Route path="dashboard" element={<FitnessDashboard/>} />
           <Route path="contact" element={<Contact/>} />
         </Route>
         <Route path="signin" element={<SignIn/>} />
