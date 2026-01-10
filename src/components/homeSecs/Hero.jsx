@@ -13,7 +13,7 @@ export default function Hero() {
             <div className="w-full h-full bg-black/20 md:bg-black/80 md:hover:bg-black/50 ">
                 <div className="w-full md:w-[60%] flex flex-col gap-20 md:p-[100px] h-full justify-center items-center md:justify-start md:items-start">
                     <h1 
-                    className="text-5xl md:text-7xl font-bold text-yellow wow animate__animated animate__backInLeft"
+                    className="text-5xl md:text-7xl font-bold text-yellow p-4 md:p-0 wow animate__animated animate__backInLeft"
                     data-wow-delay="0.2s" 
                     data-wow-duration="1s"
                     >
