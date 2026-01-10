@@ -16,6 +16,7 @@ import img6 from '../../assets/imges/HomeSlider/img6.jpg';
 import img7 from '../../assets/imges/HomeSlider/img7.jpg';
 import img8 from '../../assets/imges/HomeSlider/img8.jpg';
 import img9 from '../../assets/imges/HomeSlider/img9.jpg';
+import { Link } from 'react-router-dom';
 
 export default function HomeSlider() {
   const progressCircle = useRef(null);
@@ -225,7 +226,7 @@ export default function HomeSlider() {
                 {/* CTA Button */}
                 <div className="pt-6 animate-slideUp delay-200" data-swiper-parallax="-50">
                   <button className="group/btn relative px-8 py-4 bg-yellow text-black font-bold text-lg rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-yellow/50">
-                    <span className="relative z-10 flex items-center gap-2">
+                    <Link to={"/dashboard"} className="relative z-10 flex items-center gap-2">
                       Get Started
                       <svg 
                         className="w-5 h-5 transition-transform duration-300 group-hover/btn:translate-x-1" 
@@ -235,7 +236,7 @@ export default function HomeSlider() {
                       >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>
-                    </span>
+                    </Link>
                     <div className="absolute inset-0 bg-linear-to-r from-yellow to-yellow-400 transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300 origin-left" />
                   </button>
                 </div>

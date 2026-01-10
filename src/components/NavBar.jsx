@@ -7,20 +7,20 @@ export default function NavBar() {
 
 
     return (
-        <div className='flex gap-5 text-md md:text-lg'>
-            <NavLink className={({isActive})=> 'hover:text-[#f7bb17] font-bold ' + (isActive&&'text-[#f7bb17]')} to={'/'}>
+        <div className='flex gap-5 text-sm md:text-lg'>
+            <NavLink className={({isActive})=> 'hover:text-yellow font-bold ' + (isActive&&'text-yellow')} to={'/'}>
                 Home
             </NavLink>
-            <NavLink className={({isActive})=> 'hover:text-[#f7bb17] font-bold ' + (isActive&&'text-[#f7bb17]')} to={'/about'}>
+            <NavLink className={({isActive})=> 'hover:text-yellow font-bold ' + (isActive&&'text-yellow')} to={'/about'}>
                 About
             </NavLink>
-            <NavLink className={({isActive})=> 'hover:text-[#f7bb17] font-bold ' + (isActive ? 'text-[#f7bb17]' : " ")} to={'/dashboard'}>
+            <NavLink className={({isActive})=> 'hover:text-yellow font-bold ' + (isActive ? 'text-yellow' : " ")} to={'/dashboard'}>
                 Dashbourd
             </NavLink>
-            <NavLink className={({isActive})=> 'hover:text-[#f7bb17] font-bold ' + (isActive&&'text-[#f7bb17]')} to={'/signin'}>
+            <NavLink className={({isActive})=> 'hover:text-yellow font-bold ' + (isActive&&'text-yellow')} to={'/signin'}>
                 Sign In/Up
             </NavLink>
-            <NavLink className={({isActive})=> 'hover:text-[#f7bb17] font-bold ' + (isActive&&'text-[#f7bb17]')} to={'/contact'}>
+            <NavLink className={({isActive})=> 'hover:text-yellow font-bold ' + (isActive&&'text-yellow')} to={'/contact'}>
                 Contact Us
             </NavLink>
         </div>

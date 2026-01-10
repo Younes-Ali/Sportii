@@ -65,7 +65,7 @@ export default function HorizontalScrollBar  ()  {
             </style>
             
             <div className="flex animate-scroll">
-                {[...sponsers, ...sponsers,, ...sponsers, ...sponsers].map((item, index) => (
+                {[...sponsers, ...sponsers, ...sponsers, ...sponsers].map((item, index) => (
                 <div
                     key={`${item.id}-${index}`}
                     className={`
