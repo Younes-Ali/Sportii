@@ -32,13 +32,13 @@ export const Sidebar = () => {
 <>
     {isSidebarOpen && (
         <div 
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
+          className="fixed inset-0 bg-black/40 bg-opacity-50 z-40 md:hidden"
           onClick={closeSidebar}
         />
       )}
 
     <aside className={`fixed md:static inset-y-0 left-0 z-50
-        w-64 bg-gray-800 min-h-screen border-r border-gray-700
+        w-64 bg-black min-h-screen border-r border-yellow
         transform transition-transform duration-300 ease-in-out
         ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}
         md:translate-x-0`}
@@ -61,7 +61,7 @@ export const Sidebar = () => {
               onClick={() => setActiveTab(item.id)}
               className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition ${
                 activeTab === item.id
-                  ? 'bg-blue-600 text-white'
+                  ? 'bg-yellow text-black'
                   : 'text-gray-300 hover:bg-gray-700'
               }`}
             >
