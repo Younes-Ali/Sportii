@@ -18,7 +18,7 @@ export const ClientOverview = () => {
   ];
 
   const achievements = [
-    { name: '7 Day Streak', icon: Flame, color: 'orange' },
+    { name: '7 Day Streak', icon: Flame, color: 'red' },
     { name: '50 Workouts', icon: Trophy, color: 'yellow' },
     { name: '10kg Lost', icon: Target, color: 'green' },
   ];
@@ -34,7 +34,7 @@ export const ClientOverview = () => {
         <StatCard icon={Bell} label="Notifications" value="3" color="blue" />
       </div>
 
-      <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
+      <div className="bg-black rounded-xl p-6 border border-gray-700">
         <h3 className="text-xl font-semibold text-white mb-4">Weight Progress</h3>
         <ResponsiveContainer width="100%" height={250}>
           <LineChart data={progressData}>
@@ -48,7 +48,7 @@ export const ClientOverview = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
+        <div className="bg-black rounded-xl p-6 border border-gray-700">
           <h3 className="text-xl font-semibold text-white mb-4">Today's Workout</h3>
           <div className="space-y-4">
             {todayWorkout.map((exercise, idx) => (
@@ -63,7 +63,7 @@ export const ClientOverview = () => {
           </div>
         </div>
 
-        <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
+        <div className="bg-black rounded-xl p-6 border border-gray-700">
           <h3 className="text-xl font-semibold text-white mb-4">Recent Achievements</h3>
           <div className="space-y-4">
             {achievements.map((achievement, idx) => {
@@ -81,7 +81,7 @@ export const ClientOverview = () => {
         </div>
       </div>
 
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-6">
+      <div className="bg-linear-to-r from-blue-600 to-purple-600 rounded-xl p-6">
         <h3 className="text-2xl font-bold text-white mb-2">Keep Going!</h3>
         <p className="text-blue-100">You're doing amazing! Stay consistent and you'll reach your goals.</p>
       </div>
