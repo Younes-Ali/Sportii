@@ -11,12 +11,12 @@ export const StatCard = ({ icon: Icon, label, value, color }) => {
   };
 
   const colorClasses2 = {
-    blue: 'from-blue-800 via-blue-600 to-transparent bg-linear-to-t',
-    green: 'from-green-800 via-green-600 to-transparent bg-linear-to-t',
-    yellow: 'from-yellow-800 via-yellow-600 to-transparent bg-linear-to-t',
-    red: 'from-red-800 via-red-600 to-transparent bg-linear-to-t',
-    purple: 'from-purple-800 via-purple-600 to-transparent bg-linear-to-t',
-    orange: 'from-orange-800 via-orange-600 to-transparent bg-linear-to-t',
+    blue: 'from-blue-800 via-blue-600 to-transparent bg-linear-to-tl',
+    green: 'from-green-800 via-green-600 to-transparent bg-linear-to-tl',
+    yellow: 'from-yellow-800 via-yellow-600 to-transparent bg-linear-to-tl',
+    red: 'from-red-800 via-red-600 to-transparent bg-linear-to-tl',
+    purple: 'from-purple-800 via-purple-600 to-transparent bg-linear-to-tl',
+    orange: 'from-orange-800 via-orange-600 to-transparent bg-linear-to-tl',
   };
 
   return (

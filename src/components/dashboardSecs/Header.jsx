@@ -31,7 +31,7 @@ export const Header = () => {
           </button>
           <button 
             onClick={toggleSidebar}
-            className="text-gray-300 hover:text-white transition md:hidden"
+            className="text-black hover:text-gray-400 transition md:hidden"
           >
             <IoMenuSharp size={24} />
           </button>

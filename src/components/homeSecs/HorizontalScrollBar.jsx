@@ -54,8 +54,9 @@ export default function HorizontalScrollBar  ()  {
                 }
                 
                 .animate-scroll {
-                    animation: scroll-infinite 30s linear infinite;
+                    animation: scroll-infinite 45s linear infinite;
                     width: max-content;
+                    will-change: transform;
                 }
                 
                 .animate-scroll:hover {
@@ -65,7 +66,7 @@ export default function HorizontalScrollBar  ()  {
             </style>
             
             <div className="flex animate-scroll">
-                {[...sponsers, ...sponsers, ...sponsers, ...sponsers].map((item, index) => (
+                {[...sponsers, ...sponsers, ...sponsers, ...sponsers, ...sponsers, ...sponsers].map((item, index) => (
                 <div
                     key={`${item.id}-${index}`}
                     className={`
@@ -110,8 +111,9 @@ export default function HorizontalScrollBar  ()  {
                 }
                 
                 .animate-scroll-reverse {
-                    animation: scroll-reverse 30s linear infinite;
+                    animation: scroll-reverse 45s linear infinite;
                     width: max-content;
+                    will-change: transform;
                 }
                 
                 .animate-scroll-reverse:hover {
@@ -121,7 +123,7 @@ export default function HorizontalScrollBar  ()  {
             </style>
             
             <div className="flex animate-scroll-reverse">
-                {[...partners, ...partners, ...partners, ...partners].map((item, index) => (
+                {[...partners, ...partners, ...partners, ...partners, ...partners, ...partners,].map((item, index) => (
                 <div
                     key={`${item.id}-${index}`}
                     className={`
