@@ -1,6 +1,6 @@
 import React from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { Dumbbell, CheckCircle, Flame, Bell, Target, Trophy } from 'lucide-react';
+import { Dumbbell, CheckCircle, FlameIcon, Bell, Target, Trophy } from 'lucide-react';
 import { StatCard } from '../StatCard';
 
 export const ClientOverview = () => {
@@ -18,7 +18,7 @@ export const ClientOverview = () => {
   ];
 
   const achievements = [
-    { name: '7 Day Streak', icon: Flame, color: 'red' },
+    { name: '7 Day Streak', icon: FlameIcon, color: 'red' },
     { name: '50 Workouts', icon: Trophy, color: 'yellow' },
     { name: '10kg Lost', icon: Target, color: 'green' },
   ];
@@ -30,7 +30,7 @@ export const ClientOverview = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <StatCard icon={Dumbbell} label="Active Plan" value="Strength" color="purple" />
         <StatCard icon={CheckCircle} label="Today's Workout" value="Complete" color="green" />
-        <StatCard icon={Flame} label="Streak" value="12 Days" color="orange" />
+        <StatCard icon={FlameIcon} label="Streak" value="12 Days" color="orange" />
         <StatCard icon={Bell} label="Notifications" value="3" color="blue" />
       </div>
 
@@ -71,7 +71,7 @@ export const ClientOverview = () => {
               return (
                 <div key={idx} className="flex items-center space-x-4 p-4 bg-gray-900 rounded-lg">
                   <div className={`p-3 rounded-full bg-${achievement.color}-500/20`}>
-                    <Icon className={`text-${achievement.color}-400`} size={24} />
+                    <Icon className={`text-${achievement.color}-500`} size={24} />
                   </div>
                   <span className="text-white font-medium">{achievement.name}</span>
                 </div>

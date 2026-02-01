@@ -38,6 +38,7 @@ export default function AuthPages() {
   const registerFormik = useFormik({
     initialValues: {
       username: "",
+      role: "", 
       email: "",
       password: "",
       confirmPassword: "",
@@ -46,6 +47,7 @@ export default function AuthPages() {
       username: Yup.string()
         .required("Username is required")
         .min(3, "Username must be at least 3 characters"),
+      role: Yup.string().required("Please select a role"),
       email: Yup.string().email("Invalid email address").required("Email is required"),
       password: Yup.string()
         .required("Password is required")
@@ -73,7 +75,7 @@ export default function AuthPages() {
 
   return (
     <div className="w-full min-h-screen bg-linear-to-br from-gray-900 via-gray-800 to-black flex justify-center items-center p-4">
-      <div className="w-full max-w-6xl h-[600px] relative">
+      <div className="w-full max-w-6xl h-[700px] relative">
         {/* Sign In Section */}
         <div
           className={`absolute inset-0 transition-all duration-700 ease-in-out transform ${
