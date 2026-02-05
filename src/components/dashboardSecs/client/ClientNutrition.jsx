@@ -69,7 +69,7 @@ const ClientNutrition = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-6 animate-fade-in">
+    <div className="min-h-screen bg-gray-900 text-white md:p-6 animate-fade-in">
       <div className="max-w-7xl mx-auto space-y-6">
         {/* Header */}
         <NutritionHeader />
@@ -95,7 +95,7 @@ const ClientNutrition = () => {
 // ============================================
 const NutritionHeader = () => {
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex items-center justify-between flex-wrap gap-4">
       <div>
         <h1 className="text-4xl font-bold text-primary mb-2">Nutrition Plan</h1>
         <p className="text-gray-200">Track your daily meals and macros</p>

@@ -64,7 +64,7 @@ const ClientWorkout = () => {
 // ============================================
 const WorkoutHeader = () => {
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex items-center justify-between flex-wrap gap-4">
       <div>
         <h1 className="text-4xl font-bold text-white mb-2">My Workout</h1>
         <p className="text-gray-300">Track your daily exercises and progress</p>
@@ -100,7 +100,7 @@ const TodayWorkoutCard = ({ workout , colorClasses }) => {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-4 mb-4">
+      <div className="grid md:grid-cols-3 gap-4 mb-4">
         <StatBadge icon={Clock} label="Duration" value={workout.duration} color={colorClasses.red} />
         <StatBadge icon={Dumbbell} label="Exercises" value={workout.exercises.length} color={colorClasses.blue} />
         <StatBadge icon={Flame} label="Calories" value={`${workout.calories} kcal`} color={colorClasses.green} />
@@ -147,7 +147,7 @@ const WeeklyPlanSection = ({ weeklyPlan, activeDay, setActiveDay }) => {
   return (
     <div className="bg-gray-800 border border-white/50 hover:border-white rounded-2xl p-6">
       <h3 className="text-2xl font-bold text-white mb-4">Weekly Plan</h3>
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-7 gap-3">
         {weeklyPlan.map((day) => (
           <DayCard
             key={day.day}
@@ -282,16 +282,16 @@ const ExerciseCard = ({ exercise, index, onCompleteSet }) => {
 
       <div className="grid grid-cols-3 gap-4 mb-4">
         <div className=" p-3 rounded-lg text-center">
-          <div className="text-xl font-bold text-gray-300 mb-1">Sets</div>
-          <div className="text-lg font-bold text-gray-300">{exercise.sets}</div>
+          <div className="md:text-xl font-bold text-gray-300 mb-1">Sets</div>
+          <div className="md:text-lg font-bold text-gray-300">{exercise.sets}</div>
         </div>
         <div className=" p-3 rounded-lg text-center">
-          <div className="text-xl font-bold text-gray-300 mb-1">Reps</div>
-          <div className="text-lg font-bold text-gray-300">{exercise.reps}</div>
+          <div className="md:text-xl font-bold text-gray-300 mb-1">Reps</div>
+          <div className="md:text-lg font-bold text-gray-300">{exercise.reps}</div>
         </div>
         <div className=" p-3 rounded-lg text-center">
-          <div className="text-xl font-bold text-gray-300 mb-1">Rest</div>
-          <div className="text-lg font-bold text-gray-300">{exercise.rest}s</div>
+          <div className="md:text-xl font-bold text-gray-300 mb-1">Rest</div>
+          <div className="md:text-lg font-bold text-gray-300">{exercise.rest}s</div>
         </div>
       </div>
 

@@ -135,7 +135,7 @@ const ClientAchievements = () => {
     .reduce((sum, a) => sum + a.points, 0);
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-6 animate-fade-in">
+    <div className="min-h-screen bg-gray-900 text-white md:p-6 animate-fade-in">
       <div className="max-w-7xl mx-auto space-y-6">
         {/* Header */}
         <AchievementsHeader unlockedCount={unlockedCount} total={achievements.length} totalPoints={totalPoints} />
@@ -169,7 +169,7 @@ const AchievementsHeader = ({ unlockedCount, total, totalPoints }) => {
 
   return (
     <div className="space-y-4">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between flex-wrap gap-2">
         <div>
           <h1 className="text-4xl font-bold text-green-500 mb-2">Achievements</h1>
           <p className="text-gray-200">Track your milestones and earn rewards</p>
@@ -212,14 +212,14 @@ const AchievementsHeader = ({ unlockedCount, total, totalPoints }) => {
 // ============================================
 const CategoriesFilter = ({ categories, selectedCategory, setSelectedCategory }) => {
   return (
-    <div className="flex space-x-3 overflow-x-auto pb-2">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 space-x-3 overflow-x-auto pb-2 ">
       {categories.map((category) => {
         const Icon = category.icon;
         return (
           <button
             key={category.id}
             onClick={() => setSelectedCategory(category.id)}
-            className={`flex items-center space-x-2 px-5 py-3 rounded-lg font-semibold whitespace-nowrap transition-all duration-300 ${
+            className={`flex items-center space-x-2 px-5 py-3 rounded-lg font-semibold whitespace-nowrap transition-all duration-300  ${
               selectedCategory === category.id
                 ? 'bg-green-500 text-black shadow-lg'
                 : 'btn bg-gray-800 text-gray-400 hover:bg-green-400/80 border border-white/50 hover:text-black'

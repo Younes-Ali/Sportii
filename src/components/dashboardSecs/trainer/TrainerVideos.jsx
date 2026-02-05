@@ -239,7 +239,7 @@ const StatsOverview = ({ totalVideos, totalViews, totalLikes, totalComments }) =
 // ============================================
 const CategoriesFilter = ({ categories, selectedCategory, setSelectedCategory }) => {
   return (
-    <div className="flex space-x-2 md:space-x-3 overflow-x-auto pb-2 scrollbar-hide">
+    <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-2 space-x-2 md:space-x-3 overflow-x-auto pb-2 scrollbar-hide">
       {categories.map((category) => {
         const Icon = category.icon;
         return (

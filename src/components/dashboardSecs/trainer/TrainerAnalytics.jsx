@@ -39,7 +39,7 @@ const TrainerAnalytics = () => {
   const [selectedMetric, setSelectedMetric] = useState('all');
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-6 animate-fade-in">
+    <div className="min-h-screen bg-gray-900 text-white md:p-6 animate-fade-in">
       <div className="max-w-7xl mx-auto space-y-6">
         {/* Header */}
         <AnalyticsHeader selectedPeriod={selectedPeriod} setSelectedPeriod={setSelectedPeriod} />
@@ -59,7 +59,9 @@ const TrainerAnalytics = () => {
         </div>
 
         {/* Client Performance Table */}
-        <ClientPerformanceTable />
+
+          <ClientPerformanceTable />
+        
 
         {/* Additional Stats */}
         <AdditionalStats />
@@ -84,7 +86,7 @@ const AnalyticsHeader = ({ selectedPeriod, setSelectedPeriod }) => {
   };
 
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex items-center justify-between flex-wrap gap-2">
       <div>
         <h1 className="text-4xl font-bold text-white mb-2">Analytics Dashboard</h1>
         <p className="text-gray-200">Track client performance and business metrics</p>
@@ -247,7 +249,7 @@ const ClientGrowthChart = () => {
   };
 
   return (
-    <div className="bg-gray-800 border border-white/50 hover:border-white rounded-2xl p-6">
+    <div className=" bg-gray-800 border border-white/50 hover:border-white rounded-2xl p-6">
       <h3 className="text-2xl font-bold text-white mb-4">Client Growth</h3>
       <div className="h-80">
         <Line data={data} options={options} />
@@ -314,7 +316,7 @@ const WorkoutCompletionChart = () => {
   };
 
   return (
-    <div className="bg-gray-800 border border-white/50 hover:border-white rounded-2xl p-6">
+    <div className=" bg-gray-800 border border-white/50 hover:border-white rounded-2xl p-6">
       <h3 className="text-2xl font-bold text-white mb-4">Workout Completion Rate</h3>
       <div className="h-80">
         <Bar data={data} options={options} />
@@ -369,7 +371,7 @@ const ClientGoalsChart = () => {
   };
 
   return (
-    <div className="bg-gray-800 border border-white/50 hover:border-white rounded-2xl p-6">
+    <div className=" md:w-full bg-gray-800 border border-white/50 hover:border-white rounded-2xl p-6">
       <h3 className="text-2xl font-bold text-white mb-4">Client Goals Distribution</h3>
       <div className="h-80 flex items-center justify-center">
         <Doughnut data={data} options={options} />
@@ -473,36 +475,50 @@ const ClientPerformanceTable = () => {
   };
 
   return (
-    <div className="bg-gray-800 border border-white/50 hover:border-white rounded-2xl p-6">
-      <h3 className="text-2xl font-bold text-white mb-4">Top Performing Clients</h3>
-      <div className="overflow-x-auto">
-        <table className="w-full">
+    <div className="w-[95vw] md:w-full bg-gray-800 border border-white/50 hover:border-white rounded-2xl p-4 sm:p-6 overflow-hidden">
+      <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">
+        Top Performing Clients
+      </h3>
+
+      {/* scroll wrapper */}
+      <div className="w-full overflow-x-auto">
+        <table className="table-auto w-full">
           <thead className="bg-black">
             <tr>
-              <th className="text-left text-gray-200 font-medium px-4 py-3">Client</th>
-              <th className="text-left text-gray-200 font-medium px-4 py-3">Goal</th>
-              <th className="text-center text-gray-200 font-medium px-4 py-3">Workouts</th>
-              <th className="text-center text-gray-200 font-medium px-4 py-3">Completion</th>
-              <th className="text-center text-gray-200 font-medium px-4 py-3">Progress</th>
-              <th className="text-center text-gray-200 font-medium px-4 py-3">Trend</th>
+              <th className="text-left text-gray-200 font-medium md:px-6 px-4 py-3">Client</th>
+              <th className="text-left text-gray-200 font-medium md:px-8 px-4 py-3">Goal</th>
+              <th className="text-center text-gray-200 font-medium md:px-3 px-4 py-3">Workouts</th>
+              <th className="text-center text-gray-200 font-medium md:px-3 px-4 py-3">Completion</th>
+              <th className="text-center text-gray-200 font-medium md:px-3 px-4 py-3">Progress</th>
+              <th className="text-center text-gray-200 font-medium md:px-3 px-4 py-3">Trend</th>
             </tr>
           </thead>
-          <tbody>
+
+          <tbody className='overflow-scroll'>
             {clients.map((client) => (
               <tr key={client.id} className="border-t border-gray-700 hover:bg-black/50 transition-all duration-300">
-                <td className="px-4 py-3">
+                <td className="px-6 sm:px-4 py-3">
                   <div className="flex items-center space-x-3">
                     <img
                       src={`https://ui-avatars.com/api/?name=${client.name}&background=f7bb17&color=000`}
                       alt={client.name}
                       className="w-10 h-10 rounded-full"
                     />
-                    <span className="text-white font-medium">{client.name}</span>
+                    <span className="text-white font-medium whitespace-nowrap">
+                      {client.name}
+                    </span>
                   </div>
                 </td>
-                <td className="px-4 py-3 text-gray-300">{client.goal}</td>
-                <td className="px-4 py-3 text-center text-white font-semibold">{client.workouts}</td>
-                <td className="px-4 py-3 text-center">
+
+                <td className="px-8 sm:px-4 py-3 text-gray-300 whitespace-nowrap">
+                  {client.goal}
+                </td>
+
+                <td className="px-3 sm:px-4 py-3 text-center text-white font-semibold">
+                  {client.workouts}
+                </td>
+
+                <td className="px-3 sm:px-4 py-3 text-center">
                   <div className="flex items-center justify-center space-x-2">
                     <div className="w-16 bg-black rounded-full h-2">
                       <div
@@ -510,15 +526,19 @@ const ClientPerformanceTable = () => {
                         style={{ width: `${client.completion}%` }}
                       />
                     </div>
-                    <span className="text-white font-semibold text-sm">{client.completion}%</span>
+                    <span className="text-white font-semibold text-sm">
+                      {client.completion}%
+                    </span>
                   </div>
                 </td>
-                <td className="px-4 py-3 text-center">
+
+                <td className="px-3 sm:px-4 py-3 text-center">
                   <span className={`px-3 py-1 rounded-full text-sm font-semibold ${getProgressColor(client.progress)}`}>
                     {client.progress}
                   </span>
                 </td>
-                <td className="px-4 py-3 text-center">
+
+                <td className="px-3 sm:px-4 py-3 text-center">
                   <TrendingUp
                     className={`mx-auto ${client.trend === 'up' ? 'text-green-400' : 'text-red-400 rotate-180'}`}
                     size={20}
@@ -532,6 +552,7 @@ const ClientPerformanceTable = () => {
     </div>
   );
 };
+
 
 // ============================================
 // Additional Stats Component

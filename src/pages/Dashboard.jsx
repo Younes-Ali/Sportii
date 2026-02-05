@@ -31,7 +31,7 @@ const FitnessDashboard = () => {
       <Header />
       <div className="flex">
         <Sidebar />
-        <main className="flex-1 p-6">
+        <main className="flex-1 p-1 md:p-6">
           {user.role === 'trainer' ? <TrainerDashboard /> : <ClientDashboard />}
         </main>
       </div>

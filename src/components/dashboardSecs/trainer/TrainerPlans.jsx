@@ -114,7 +114,7 @@ const TrainerPlans = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-6 animate-fade-in">
+    <div className="min-h-screen bg-gray-900 text-white md:p-6 animate-fade-in">
       <div className="max-w-7xl mx-auto space-y-6">
         {/* Header */}
         <PlansHeader />
@@ -154,7 +154,7 @@ const TrainerPlans = () => {
 // ============================================
 const PlansHeader = () => {
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex items-center justify-between flex-wrap gap-2">
       <div>
         <h1 className="text-4xl font-bold text-blue-600 mb-2">Training Plans</h1>
         <p className="text-gray-200">Create and manage workout & nutrition plans</p>

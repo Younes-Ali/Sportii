@@ -46,7 +46,7 @@ const ClientProgress = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-6 animate-fade-in">
+    <div className="min-h-screen bg-gray-900 text-white md:p-6 animate-fade-in">
       <div className="max-w-7xl mx-auto space-y-6">
         {/* Header */}
         <ProgressHeader />
@@ -75,12 +75,12 @@ const ClientProgress = () => {
 // ============================================
 const ProgressHeader = () => {
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex items-center justify-between flex-wrap">
       <div>
         <h1 className="text-4xl font-bold text-white mb-2">My Progress</h1>
         <p className="text-gray-400">Track your transformation journey</p>
       </div>
-      <button className="bg-yellow hover:bg-primary-light text-black font-bold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105">
+      <button className="bg-yellow hover:bg-primary-light text-black font-bold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 mt-2 md:mt-0" onClick={() => toast.info('Add Progress Entry functionality coming soon!')}>
         <Plus className="inline mr-2" size={20} />
         Add Entry
       </button>
@@ -222,7 +222,7 @@ const WeightChart = ({ data, period, setPeriod }) => {
 
   return (
     <div className="bg-gray-800 border border-gray-700 rounded-2xl p-6">
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex items-center justify-between mb-4 flex-wrap gap-4">
         <h3 className="text-2xl font-bold text-white">Weight Progress</h3>
         <div className="flex space-x-2">
           {periods.map((p) => (
@@ -323,7 +323,7 @@ const BodyFatChart = ({ data }) => {
 const MeasurementsSection = ({ measurements }) => {
   return (
     <div className="bg-gray-800 border border-gray-700 rounded-2xl p-6">
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex items-center justify-between mb-4 flex-wrap gap-4">
         <h3 className="text-2xl font-bold text-white flex items-center">
           <Ruler className="text-primary mr-3" size={28} />
           Body Measurements

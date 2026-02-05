@@ -11,7 +11,7 @@ export const TrainerClients = () => {
 
   return (
     <div className="space-y-6">
-      <div className="flex md:flex-col flex-row md:items-start items-center justify-between gap-4">
+      <div className="flex md:flex-col flex-row md:items-start items-center justify-between gap-4 flex-wrap">
         <h2 className="text-2xl sm:text-3xl font-bold text-white">Client Management</h2>
         <button className="bg-blue-500 hover:bg-blue-400 text-black px-4 py-2 rounded-lg flex items-center space-x-2 transition w-full sm:w-auto justify-center">
           <Plus size={20} />
