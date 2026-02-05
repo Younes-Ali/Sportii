@@ -159,7 +159,7 @@ const KeyMetrics = () => {
         return (
           <div
             key={index}
-            className="bg-gray-800 border border-white/50 hover:border-white rounded-xl p-5 hover:border-primary/50 transition-all duration-300 animate-slide-up"
+            className="bg-gray-800 border border-white/50 hover:border-white rounded-xl p-5 transition-all duration-300 animate-slide-up"
             style={{ animationDelay: `${index * 100}ms` }}
           >
             <div className="flex items-center justify-between mb-3">

@@ -223,7 +223,7 @@ const StatsOverview = ({ totalVideos, totalViews, totalLikes, totalComments }) =
                 <div className="text-xs md:text-sm text-gray-400 mb-1 truncate">{stat.label}</div>
                 <div className="text-xl md:text-3xl font-bold text-white truncate">{stat.value}</div>
               </div>
-              <div className={`w-10 h-10 md:w-14 md:h-14 bg-${stat.color}/20 rounded-lg flex items-center justify-center flex-shrink-0`}>
+              <div className={`w-10 h-10 md:w-14 md:h-14 bg-${stat.color}/20 rounded-lg flex items-center justify-center shrink-0`}>
                 <Icon className={`text-${stat.color}`} size={20} />
               </div>
             </div>
