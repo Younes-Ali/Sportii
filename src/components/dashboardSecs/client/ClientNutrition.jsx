@@ -69,7 +69,7 @@ const ClientNutrition = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white p-6 animate-fade-in">
+    <div className="min-h-screen bg-gray-900 text-white p-6 animate-fade-in">
       <div className="max-w-7xl mx-auto space-y-6">
         {/* Header */}
         <NutritionHeader />
@@ -98,7 +98,7 @@ const NutritionHeader = () => {
     <div className="flex items-center justify-between">
       <div>
         <h1 className="text-4xl font-bold text-primary mb-2">Nutrition Plan</h1>
-        <p className="text-gray-400">Track your daily meals and macros</p>
+        <p className="text-gray-200">Track your daily meals and macros</p>
       </div>
       <button className="bg-primary hover:bg-primary-light text-black font-bold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105">
         <Plus className="inline mr-2" size={20} />
@@ -117,7 +117,7 @@ const MacrosCard = ({ macros }) => {
     datasets: [
       {
         data: [macros.protein.consumed, macros.carbs.consumed, macros.fats.consumed],
-        backgroundColor: ['#f7bb17', '#3b82f6', '#10b981'],
+        backgroundColor: ['#605dff', '#297fff', '#0cc952'],
         borderColor: ['#000', '#000', '#000'],
         borderWidth: 2,
       },
@@ -141,7 +141,7 @@ const MacrosCard = ({ macros }) => {
   const caloriePercentage = Math.round((macros.calories.consumed / macros.calories.target) * 100);
 
   return (
-    <div className="bg-secondary border border-gray-700 rounded-2xl p-6">
+    <div className="bg-gray-800 border border-gray-700 rounded-2xl p-6">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-2xl font-bold text-white">Today's Macros</h3>
         <Apple className="text-primary" size={28} />
@@ -150,14 +150,14 @@ const MacrosCard = ({ macros }) => {
       {/* Calories Progress */}
       <div className="mb-6">
         <div className="flex justify-between mb-2">
-          <span className="text-gray-400">Calories</span>
+          <span className="text-gray-200">Calories</span>
           <span className="text-primary font-bold">
             {macros.calories.consumed} / {macros.calories.target} kcal
           </span>
         </div>
         <div className="w-full bg-black rounded-full h-3 overflow-hidden">
           <div
-            className="bg-gradient-to-r from-primary to-primary-light h-full transition-all duration-500"
+            className="bg-linear-r from-primary to-primary-light h-full transition-all duration-500"
             style={{ width: `${caloriePercentage}%` }}
           />
         </div>
@@ -187,7 +187,7 @@ const MacroBar = ({ label, consumed, target, color }) => {
   return (
     <div>
       <div className="flex justify-between text-sm mb-1">
-        <span className="text-gray-400">{label}</span>
+        <span className="text-gray-200">{label}</span>
         <span className="text-white font-semibold">
           {consumed}g / {target}g
         </span>
@@ -209,7 +209,7 @@ const WaterIntakeCard = ({ glasses, target, onAdd }) => {
   const percentage = Math.round((glasses / target) * 100);
 
   return (
-    <div className="bg-gradient-to-br from-blue-600/20 to-cyan-600/20 border border-blue-500/30 rounded-2xl p-6">
+    <div className="bg-linear-to-br from-blue-600/20 to-cyan-600/20 border border-blue-500/30 rounded-2xl p-6">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-2xl font-bold text-white">Water Intake</h3>
         <Droplet className="text-blue-400" size={28} />
@@ -270,7 +270,7 @@ const WaterIntakeCard = ({ glasses, target, onAdd }) => {
 // ============================================
 const MealsSection = ({ meals }) => {
   return (
-    <div className="bg-secondary border border-gray-700 rounded-2xl p-6">
+    <div className="bg-gray-800 border border-white/50 hover:border-white rounded-2xl p-6">
       <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
         <Utensils className="text-primary mr-3" size={28} />
         Today's Meals
@@ -354,7 +354,7 @@ const NutritionTips = () => {
       title: 'Protein Timing',
       description: 'Consume protein within 30 minutes after workout for muscle recovery',
       icon: TrendingUp,
-      color: 'primary',
+      color: 'orange',
     },
     {
       title: 'Balanced Meals',
@@ -365,7 +365,7 @@ const NutritionTips = () => {
   ];
 
   return (
-    <div className="bg-secondary border border-gray-700 rounded-2xl p-6">
+    <div className="bg-gray-800 border border-white/50 hover:border-white rounded-2xl p-6">
       <h3 className="text-2xl font-bold text-white mb-4">Nutrition Tips</h3>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {tips.map((tip, index) => {

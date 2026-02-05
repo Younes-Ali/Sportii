@@ -46,7 +46,7 @@ const ClientProgress = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white p-6 animate-fade-in">
+    <div className="min-h-screen bg-gray-900 text-white p-6 animate-fade-in">
       <div className="max-w-7xl mx-auto space-y-6">
         {/* Header */}
         <ProgressHeader />
@@ -77,10 +77,10 @@ const ProgressHeader = () => {
   return (
     <div className="flex items-center justify-between">
       <div>
-        <h1 className="text-4xl font-bold text-primary mb-2">My Progress</h1>
+        <h1 className="text-4xl font-bold text-white mb-2">My Progress</h1>
         <p className="text-gray-400">Track your transformation journey</p>
       </div>
-      <button className="bg-primary hover:bg-primary-light text-black font-bold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105">
+      <button className="bg-yellow hover:bg-primary-light text-black font-bold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105">
         <Plus className="inline mr-2" size={20} />
         Add Entry
       </button>
@@ -102,7 +102,7 @@ const StatsOverview = ({ weightData }) => {
       label: 'Current Weight',
       value: `${latestWeight} kg`,
       icon: Scale,
-      color: 'primary',
+      color: 'red-500',
     },
     {
       label: 'Weight Lost',
@@ -133,7 +133,7 @@ const StatsOverview = ({ weightData }) => {
         return (
           <div
             key={index}
-            className="bg-secondary border border-gray-700 rounded-xl p-5 hover:border-primary/50 transition-all duration-300 animate-slide-up"
+            className="bg-gray-800 border border-white/50 hover:border-white rounded-xl p-5 transition-all duration-300 animate-slide-up"
             style={{ animationDelay: `${index * 100}ms` }}
           >
             <div className="flex items-center justify-between mb-3">
@@ -221,7 +221,7 @@ const WeightChart = ({ data, period, setPeriod }) => {
   const periods = ['1W', '1M', '3M', '6M', '1Y'];
 
   return (
-    <div className="bg-secondary border border-gray-700 rounded-2xl p-6">
+    <div className="bg-gray-800 border border-gray-700 rounded-2xl p-6">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-2xl font-bold text-white">Weight Progress</h3>
         <div className="flex space-x-2">
@@ -231,7 +231,7 @@ const WeightChart = ({ data, period, setPeriod }) => {
               onClick={() => setPeriod(p)}
               className={`px-3 py-1 rounded-lg text-sm font-semibold transition-all duration-300 ${
                 period === p
-                  ? 'bg-primary text-black'
+                  ? 'bg-yellow text-black'
                   : 'bg-black/50 text-gray-400 hover:bg-black/70'
               }`}
             >
@@ -308,7 +308,7 @@ const BodyFatChart = ({ data }) => {
   };
 
   return (
-    <div className="bg-secondary border border-gray-700 rounded-2xl p-6">
+    <div className="bg-gray-800 border border-gray-700 rounded-2xl p-6">
       <h3 className="text-2xl font-bold text-white mb-4">Body Fat Progress</h3>
       <div className="h-64">
         <Bar data={chartData} options={options} />
@@ -322,7 +322,7 @@ const BodyFatChart = ({ data }) => {
 // ============================================
 const MeasurementsSection = ({ measurements }) => {
   return (
-    <div className="bg-secondary border border-gray-700 rounded-2xl p-6">
+    <div className="bg-gray-800 border border-gray-700 rounded-2xl p-6">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-2xl font-bold text-white flex items-center">
           <Ruler className="text-primary mr-3" size={28} />
@@ -350,7 +350,7 @@ const MeasurementCard = ({ name, data }) => {
   const isNegative = data.change < 0;
 
   return (
-    <div className="bg-black/50 border border-gray-700 rounded-xl p-4 hover:border-primary/50 transition-all duration-300">
+    <div className="bg-black/50 border border-white/50 rounded-xl p-4 hover:border-white transition-all duration-300">
       <div className="text-sm text-gray-400 mb-2 capitalize">{name}</div>
       <div className="text-3xl font-bold text-white mb-2">{data.current} cm</div>
       <div className="flex items-center justify-between text-xs">
@@ -394,7 +394,7 @@ const ProgressPhotosSection = ({ photos }) => {
   };
 
   return (
-    <div className="bg-secondary border border-gray-700 rounded-2xl p-6">
+    <div className="bg-gray-800 border border-gray-700 rounded-2xl p-6">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-2xl font-bold text-white flex items-center">
           <Camera className="text-primary mr-3" size={28} />

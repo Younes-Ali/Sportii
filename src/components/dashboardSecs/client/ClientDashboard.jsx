@@ -4,6 +4,8 @@ import { useAppStore } from '../../../store';
 import ClientWorkout from './ClientWorkout';
 import ClientNutrition from './ClientNutrition';
 import ClientProgress from './ClientProgress';
+import ClientAchievements from './ClientAchievements';
+import ClientCalendar from './ClientCalendar';
 
 export const ClientDashboard = () => {
   const { activeTab } = useAppStore();
@@ -12,8 +14,9 @@ export const ClientDashboard = () => {
   else if (activeTab === 'workout') return <ClientWorkout />;
   else if (activeTab === 'nutrition') return <ClientNutrition />;
   else if (activeTab === 'progress') return <ClientProgress/>;
-  else if (activeTab === 'achievements') return <div className="text-white">Client Achievements Section</div>;
-  else if (activeTab === 'calendar') return <div className="text-white">Client Calendar Section</div>;
+  else if (activeTab === 'achievements') return <ClientAchievements />;
+  else if (activeTab === 'calendar') return <ClientCalendar />;
+  else if (activeTab === 'chat') return <div className="text-white">Client Chat Section</div>;
 
   return (
     <div className="text-white">

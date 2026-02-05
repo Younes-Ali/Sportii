@@ -2,7 +2,6 @@ import React from 'react';
 import { Activity, Users, BookOpen, TrendingUp, MessageSquare, Calendar, Video, Dumbbell, Apple, Trophy, X } from 'lucide-react';
 import { useAppStore } from '../../store';
 
-
 export const Sidebar = () => {
   const { user, activeTab, setActiveTab, isSidebarOpen, closeSidebar } = useAppStore();
 
@@ -29,21 +28,24 @@ export const Sidebar = () => {
   const menu = user?.role === 'trainer' ? trainerMenu : clientMenu;
 
   return (
-<>
-    {isSidebarOpen && (
+    <>
+      {/* Overlay - يظهر لما الـ sidebar يكون مفتوح */}
+      {isSidebarOpen && (
         <div 
-          className="fixed inset-0 bg-black/40 bg-opacity-50 z-40 md:hidden"
+          className="fixed inset-0 bg-black/40 z-40"
           onClick={closeSidebar}
         />
       )}
 
-    <aside className={`fixed md:static inset-y-0 left-0 z-50
-        w-64 bg-black min-h-screen border-r border-yellow
-        transform transition-transform duration-300 ease-in-out
-        ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}
-        md:translate-x-0`}
-        >
-        <div className="flex items-center justify-between p-4 border-b border-gray-700 md:hidden">
+      {/* Sidebar - مخفي دايماً ويظهر بس لما isSidebarOpen يكون true */}
+      <aside 
+        className={`fixed inset-y-0 left-0 z-50
+          w-64 bg-black min-h-screen border-r border-yellow
+          transform transition-transform duration-300 ease-in-out
+          ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}
+      >
+        {/* زرار الإغلاق */}
+        <div className="flex items-center justify-between p-4 border-b border-gray-700">
           <span className="text-white font-semibold">Menu</span>
           <button 
             onClick={closeSidebar}
@@ -52,26 +54,31 @@ export const Sidebar = () => {
             <X size={24} />
           </button>
         </div>    
-      <nav className="p-4 space-y-2">
-        {menu.map((item) => {
-          const Icon = item.icon;
-          return (
-            <button
-              key={item.id}
-              onClick={() => setActiveTab(item.id)}
-              className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition ${
-                activeTab === item.id
-                  ? 'bg-yellow text-black'
-                  : 'text-gray-300 hover:bg-gray-700'
-              }`}
-            >
-              <Icon size={20} />
-              <span>{item.label}</span>
-            </button>
-          );
-        })}
-      </nav>
-    </aside>
-</>
+        
+        {/* القائمة */}
+        <nav className="p-4 space-y-2">
+          {menu.map((item) => {
+            const Icon = item.icon;
+            return (
+              <button
+                key={item.id}
+                onClick={() => {
+                  setActiveTab(item.id);
+                  closeSidebar(); // يقفل الـ sidebar بعد اختيار أي صفحة
+                }}
+                className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition ${
+                  activeTab === item.id
+                    ? 'bg-yellow text-black'
+                    : 'text-gray-300 hover:bg-gray-700'
+                }`}
+              >
+                <Icon size={20} />
+                <span>{item.label}</span>
+              </button>
+            );
+          })}
+        </nav>
+      </aside>
+    </>
   );
 };

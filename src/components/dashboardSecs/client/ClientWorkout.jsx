@@ -41,7 +41,7 @@ const ClientWorkout = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white text-black p-6 wow animate__animated animate-fade-in">
+    <div className=" min-h-screen bg-gray-900 text-black p-6 wow animate__animated animate-fade-in">
       <div className="max-w-7xl mx-auto space-y-6">
         {/* Header */}
         <WorkoutHeader />
@@ -66,12 +66,12 @@ const WorkoutHeader = () => {
   return (
     <div className="flex items-center justify-between">
       <div>
-        <h1 className="text-4xl font-bold text-black mb-2">My Workout</h1>
-        <p className="text-gray-800">Track your daily exercises and progress</p>
+        <h1 className="text-4xl font-bold text-white mb-2">My Workout</h1>
+        <p className="text-gray-300">Track your daily exercises and progress</p>
       </div>
       <div className="flex items-center space-x-4">
-        <div className="bg-yellow px-6 py-3 rounded-lg border border-primary/30">
-          <div className="text-sm text-gray-900">Current Streak</div>
+        <div className="bg-gray-600 px-6 py-3 rounded-lg border border-white/30">
+          <div className="text-sm text-gray-200">Current Streak</div>
           <div className="text-2xl font-bold text-orange-700 flex items-center">
             <Flame className="mr-2" size={24} />
             12 Days
@@ -89,11 +89,11 @@ const TodayWorkoutCard = ({ workout , colorClasses }) => {
   const [progress, setProgress] = useState(80);
 
   return (
-    <div className="bg-linear-to-br from-yellow to-transparent border border-black rounded-2xl p-6 animate-slide-up">
+    <div className="bg-gray-800 border border-white/50 hover:border-white rounded-2xl p-6 animate-slide-up">
       <div className="flex items-center justify-between mb-4">
         <div>
-          <h2 className="text-2xl font-bold text-black mb-1">{workout.name}</h2>
-          <p className="text-gray-900">Today's Session</p>
+          <h2 className="text-2xl font-bold text-white mb-1">{workout.name}</h2>
+          <p className="text-gray-300">Today's Session</p>
         </div>
         <div className="bg-black/80 p-4 rounded-full">
           <Dumbbell className="text-yellow" size={32} />
@@ -109,18 +109,18 @@ const TodayWorkoutCard = ({ workout , colorClasses }) => {
       {/* Progress Bar */}
       <div className="space-y-2">
         <div className="flex justify-between text-sm">
-          <span className="text-gray-900">Progress</span>
-          <span className="text-primary font-semibold">{progress}%</span>
+          <span className="text-yellow">Progress</span>
+          <span className="text-yellow font-semibold">{progress}%</span>
         </div>
-        <div className="w-full rounded-full h-3 overflow-hidden border">
+        <div className="w-full rounded-full h-3 overflow-hidden border-2">
           <div
-            className="bg-primary h-full transition-all duration-500 rounded-full"
+            className="bg-yellow h-full transition-all duration-500 rounded-full border-2 border-white"
             style={{ width: `${progress}%` }}
           />
         </div>
       </div>
 
-      <button className="w-full mt-4 bg-primary hover:bg-primary-light text-black font-bold py-3 rounded-lg transition-all duration-300 transform hover:scale-105">
+      <button className="btn w-full mt-4 bg-yellow hover:bg-primary-light text-black font-bold py-3 rounded-lg transition-all duration-300 transform hover:scale-105">
         Start Workout
       </button>
     </div>
@@ -134,8 +134,8 @@ const StatBadge = ({ icon: Icon, label, value, color }) => {
   return (
     <div className={`${color} to-white p-3 rounded-lg text-center`}>
       <Icon className={`mx-auto mb-1`} size={20} />
-      <div className="text-xl font-bold italic text-white">{label}</div>
-      <div className="text-lg font-bold text-black">{value}</div>
+      <div className="text-xl font-bold italic ">{label}</div>
+      <div className="text-lg font-bold text-gray-200">{value}</div>
     </div>
   );
 };
@@ -145,8 +145,8 @@ const StatBadge = ({ icon: Icon, label, value, color }) => {
 // ============================================
 const WeeklyPlanSection = ({ weeklyPlan, activeDay, setActiveDay }) => {
   return (
-    <div className="bg-linear-to-br from-yellow to-transparent border border-gray-700 rounded-2xl p-6">
-      <h3 className="text-2xl font-bold text-black mb-4">Weekly Plan</h3>
+    <div className="bg-gray-800 border border-white/50 hover:border-white rounded-2xl p-6">
+      <h3 className="text-2xl font-bold text-white mb-4">Weekly Plan</h3>
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3">
         {weeklyPlan.map((day) => (
           <DayCard
@@ -216,8 +216,8 @@ const ExerciseList = ({ exercises }) => {
   };
 
   return (
-    <div className="bg-linear-to-br from-yellow to-transparent border border-gray-700 rounded-2xl p-6">
-      <h3 className="text-2xl font-bold text-black mb-4">Exercise Details</h3>
+    <div className="bg-gray-800 border border-white/50 hover:border-white rounded-2xl p-6">
+      <h3 className="text-2xl font-bold text-white mb-4">Exercise Details</h3>
       <div className="space-y-4">
         {exerciseStates.map((exercise, index) => (
           <ExerciseCard
@@ -258,7 +258,7 @@ const ExerciseCard = ({ exercise, index, onCompleteSet }) => {
       className={`p-5 rounded-xl transition-all duration-300 ${
         exercise.completed
           ? 'bg-green-500/10 border-2 border-green-500/50'
-          : 'bg-black/50 border border-gray-700 hover:border-primary/50'
+          : 'bg-black/50 border border-white/50 hover:border-wh300'
       }`}
     >
       <div className="flex items-center justify-between mb-3">
@@ -282,16 +282,16 @@ const ExerciseCard = ({ exercise, index, onCompleteSet }) => {
 
       <div className="grid grid-cols-3 gap-4 mb-4">
         <div className=" p-3 rounded-lg text-center">
-          <div className="text-xl font-bold text-gray-900 mb-1">Sets</div>
-          <div className="text-lg font-bold text-gray-900">{exercise.sets}</div>
+          <div className="text-xl font-bold text-gray-300 mb-1">Sets</div>
+          <div className="text-lg font-bold text-gray-300">{exercise.sets}</div>
         </div>
         <div className=" p-3 rounded-lg text-center">
-          <div className="text-xl font-bold text-gray-900 mb-1">Reps</div>
-          <div className="text-lg font-bold text-gray-900">{exercise.reps}</div>
+          <div className="text-xl font-bold text-gray-300 mb-1">Reps</div>
+          <div className="text-lg font-bold text-gray-300">{exercise.reps}</div>
         </div>
         <div className=" p-3 rounded-lg text-center">
-          <div className="text-xl font-bold text-gray-900 mb-1">Rest</div>
-          <div className="text-lg font-bold text-gray-900">{exercise.rest}s</div>
+          <div className="text-xl font-bold text-gray-300 mb-1">Rest</div>
+          <div className="text-lg font-bold text-gray-300">{exercise.rest}s</div>
         </div>
       </div>
 

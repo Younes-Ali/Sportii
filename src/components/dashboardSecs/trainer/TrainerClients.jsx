@@ -12,8 +12,8 @@ export const TrainerClients = () => {
   return (
     <div className="space-y-6">
       <div className="flex md:flex-col flex-row md:items-start items-center justify-between gap-4">
-        <h2 className="text-2xl sm:text-3xl font-bold text-black">Client Management</h2>
-        <button className="bg-yellow hover:bg-yellow-700 text-black px-4 py-2 rounded-lg flex items-center space-x-2 transition w-full sm:w-auto justify-center">
+        <h2 className="text-2xl sm:text-3xl font-bold text-white">Client Management</h2>
+        <button className="bg-blue-500 hover:bg-blue-400 text-black px-4 py-2 rounded-lg flex items-center space-x-2 transition w-full sm:w-auto justify-center">
           <Plus size={20} />
           <span>Add Client</span>
         </button>
@@ -21,14 +21,14 @@ export const TrainerClients = () => {
 
       <div className="flex md:flex-col flex-row gap-3">
         <div className="flex-1 relative ">
-          <Search className="absolute left-3 top-3 text-gray-400" size={20} />
+          <Search className="absolute left-3 top-3 text-gray-200" size={20} />
           <input
             type="text"
             placeholder="Search clients..."
-            className="w-full bg-black text-white pl-10 pr-4 py-2 rounded-lg border border-gray-700 focus:outline-none focus:border-blue-500"
+            className="w-full bg-gray-800 text-white pl-10 pr-4 py-2 rounded-lg border border-white/50 hover:border-white focus:outline-none focus:border-blue-500"
           />
         </div>
-        <button className="bg-black text-white px-4 py-2 rounded-lg flex items-center justify-center space-x-2 border border-gray-700 hover:bg-gray-700 transition">
+        <button className="bg-gray-800 text-white px-4 py-2 rounded-lg flex items-center justify-center space-x-2 border border-gray-700 hover:bg-gray-700 transition">
           <Filter size={20} />
           <span>Filter</span>
         </button>

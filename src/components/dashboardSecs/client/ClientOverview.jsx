@@ -34,7 +34,7 @@ export const ClientOverview = () => {
         <StatCard icon={Bell} label="Notifications" value="3" color="blue" />
       </div>
 
-      <div className="bg-black rounded-xl p-6 border border-gray-700">
+      <div className="bg-gray-800 rounded-xl p-6 border border-white/50 hover:border-white transition">
         <h3 className="text-xl font-semibold text-white mb-4">Weight Progress</h3>
         <ResponsiveContainer width="100%" height={250}>
           <LineChart data={progressData}>
@@ -48,7 +48,7 @@ export const ClientOverview = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-black rounded-xl p-6 border border-gray-700">
+        <div className="bg-gray-800 rounded-xl p-6 border border-white/50 hover:border-white transition">
           <h3 className="text-xl font-semibold text-white mb-4">Today's Workout</h3>
           <div className="space-y-4">
             {todayWorkout.map((exercise, idx) => (
@@ -63,7 +63,7 @@ export const ClientOverview = () => {
           </div>
         </div>
 
-        <div className="bg-black rounded-xl p-6 border border-gray-700">
+        <div className="bg-gray-800 rounded-xl p-6 border border-white/50 hover:border-white transition">
           <h3 className="text-xl font-semibold text-white mb-4">Recent Achievements</h3>
           <div className="space-y-4">
             {achievements.map((achievement, idx) => {
